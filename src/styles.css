@@ -28,7 +28,7 @@ textarea {
   box-sizing: border-box;
 }
 
-input[type="submit"] {
+input[type="submit"], input[type="button"] {
   width: 25%;
   background-color: #36c43b;
   color: white;

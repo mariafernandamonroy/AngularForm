@@ -1,12 +1,23 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form',
   standalone: true,
   imports: [],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.css'
+  styleUrl: './form.component.css',
 })
 export class FormComponent {
-
+  [x: string]: any;
+  showToast() {
+    Swal.fire({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      text: '¡La información se ha cargado con éxito!',
+      icon: 'success',
+    });
+  }
 }
