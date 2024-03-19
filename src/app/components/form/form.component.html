@@ -9,11 +9,11 @@
   </div>
   <div>
     <Label htmlFor="description">Descripción</Label>
-    <textarea name="" id="description" cols="30" rows="10"></textarea>
+    <textarea name="" id="description" cols="30" rows="3"></textarea>
   </div>
   <div>
-    <Label htmlFor="image">Seleccione archivo (jpg,jpeg,png,PDF,etc)</Label>
-    <Input id="image" type="file" />
+    <Label htmlFor="image" >Seleccione archivo <span id="fileTypes">(jpg,jpeg,png,PDF,etc)</span></Label>
+    <Input id="image" type="file" (change)="codificarArchivo($event)" />
   </div>
   <div id="button">
     <button id="cancel">Cancelar</button>
