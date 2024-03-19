@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { CryptoComponent } from '../crypto/crypto.component';
 import * as CryptoJS from 'crypto-js';
+import { EdaService } from '../../services/eda.service';
 
 @Component({
   selector: 'app-form',
@@ -10,8 +11,14 @@ import * as CryptoJS from 'crypto-js';
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
 })
-export class FormComponent {
-  // constructor(private cryptoComponent: CryptoComponent) {}
+export class FormComponent implements OnInit {
+
+
+  constructor(private edaService:EdaService) {}
+
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   [x: string]: any;
   showToast() {
@@ -38,6 +45,7 @@ export class FormComponent {
         const hash = CryptoJS.SHA256(contenido).toString(CryptoJS.enc.Hex);
         this.checksum = hash;
         console.log(this.checksum);
+        this.edaService.addFile(this.checksum).subscribe(data => console.log(data))
       };
       reader.readAsBinaryString(this.archivo);
     }
