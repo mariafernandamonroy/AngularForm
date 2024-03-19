@@ -1,1 +1,22 @@
-<p>form works!</p>
+<div id="welcome"><h1>¡Bienvenido!</h1></div>
+
+<form>
+  <h2>Cargue su imagen</h2>
+  <h4>No podemos esperara ver lo que tiene</h4>
+  <div>
+    <label for="title">Titulo</label>
+    <Input id="title" placeholder="Ingrese titulo" type="text" />
+  </div>
+  <div>
+    <Label htmlFor="description">Descripción</Label>
+    <textarea name="" id="description" cols="30" rows="10"></textarea>
+  </div>
+  <div>
+    <Label htmlFor="image">Seleccione archivo (jpg,jpeg,png,PDF,etc)</Label>
+    <Input accept="image/*" id="image" type="file" />
+  </div>
+  <div id="button">
+    <button id="cancel">Cancelar</button>
+    <input type="submit" value="Subir" />
+  </div>
+</form>
